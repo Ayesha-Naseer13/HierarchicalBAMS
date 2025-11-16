@@ -1,0 +1,101 @@
+:root {
+  --primary: #1e3a5f;
+  --secondary: #00d4ff;
+  --accent: #ff6b9d;
+  --bg-dark: #0a0f1b;
+  --bg-card: #1a2332;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a8b8;
+  --border: #2a3a52;
+  --success: #4ade80;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #0f1620 100%);
+  color: var(--text-primary);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: linear-gradient(90deg, var(--primary) 0%, #2a5a8f 100%);
+  border-bottom: 2px solid var(--secondary);
+  padding: 2rem 0;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.sidebar {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.nav-button:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.nav-button.active {
+  background: var(--secondary);
+  color: var(--primary);
+  border-color: var(--secondary);
+}
+
+.content {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+}
