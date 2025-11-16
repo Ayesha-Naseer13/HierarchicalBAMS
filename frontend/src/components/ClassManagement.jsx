@@ -18,7 +18,7 @@ export default function ClassManagement({ departments }) {
   const fetchClasses = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/classes/department/${selectedDept}`
+        `https://hierarchicalbams-2.onrender.com/api/classes/department/${selectedDept}`
       );
       setClasses(response.data);
     } catch (error) {
@@ -29,7 +29,7 @@ export default function ClassManagement({ departments }) {
   const handleCreateClass = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/classes', {
+      await axios.post('https://hierarchicalbams-2.onrender.com/api/classes', {
         name,
         code,
         departmentId: selectedDept,
@@ -48,7 +48,7 @@ export default function ClassManagement({ departments }) {
   const handleDeleteClass = async (id) => {
     if (window.confirm('Mark this class as deleted?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/classes/${id}`);
+        await axios.delete(`https://hierarchicalbams-2.onrender.com/api/classes/${id}`);
         fetchClasses();
       } catch (error) {
         console.error('Error deleting class:', error);

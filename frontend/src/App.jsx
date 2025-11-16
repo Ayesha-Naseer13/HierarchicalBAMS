@@ -16,7 +16,7 @@ function App() {
 
   const fetchDepartments = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/departments');
+      const response = await fetch('https://hierarchicalbams-2.onrender.com/api/departments');
       const data = await response.json();
       setDepartments(data);
     } catch (error) {

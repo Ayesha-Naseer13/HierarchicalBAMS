@@ -22,7 +22,7 @@ export default function StudentManagement({ departments }) {
   const fetchClasses = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/classes/department/${selectedDept}`
+        `https://hierarchicalbams-2.onrender.com/api/classes/department/${selectedDept}`
       );
       setClasses(response.data.filter((cls) => !cls.status?.includes('deleted')));
     } catch (error) {
@@ -33,7 +33,7 @@ export default function StudentManagement({ departments }) {
   const fetchStudents = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/students/class/${selectedClass}`
+        `https://hierarchicalbams-2.onrender.com/api/students/class/${selectedClass}`
       );
       setStudents(response.data);
     } catch (error) {
@@ -44,7 +44,7 @@ export default function StudentManagement({ departments }) {
   const handleCreateStudent = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/students', {
+      await axios.post('https://hierarchicalbams-2.onrender.com/api/students', {
         name,
         rollNumber,
         departmentId: selectedDept,
@@ -62,7 +62,7 @@ export default function StudentManagement({ departments }) {
   const handleDeleteStudent = async (id) => {
     if (window.confirm('Mark this student as deleted?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/students/${id}`);
+        await axios.delete(`https://hierarchicalbams-2.onrender.com/api/students/${id}`);
         fetchStudents();
       } catch (error) {
         console.error('Error deleting student:', error);

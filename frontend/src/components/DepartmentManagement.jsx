@@ -13,7 +13,7 @@ export default function DepartmentManagement({ departments, onRefresh, onSelect 
   const handleCreateDept = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/departments', { name, code });
+      await axios.post('https://hierarchicalbams-2.onrender.com/api/departments', { name, code });
       setName('');
       setCode('');
       onRefresh();
@@ -32,7 +32,7 @@ export default function DepartmentManagement({ departments, onRefresh, onSelect 
   const handleDeleteDept = async (id) => {
     if (window.confirm('Mark this department as deleted?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/departments/${id}`);
+        await axios.delete(`https://hierarchicalbams-2.onrender.com/api/departments/${id}`);
         onRefresh();
       } catch (error) {
         console.error('Error deleting department:', error);

@@ -27,7 +27,7 @@ export default function AttendanceManagement({ departments }) {
   const fetchClasses = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/classes/department/${selectedDept}`
+        `https://hierarchicalbams-2.onrender.com/api/classes/department/${selectedDept}`
       );
       setClasses(response.data.filter((cls) => !cls.status?.includes('deleted')));
     } catch (error) {
@@ -38,7 +38,7 @@ export default function AttendanceManagement({ departments }) {
   const fetchStudents = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/students/class/${selectedClass}`
+        `https://hierarchicalbams-2.onrender.com/api/students/class/${selectedClass}`
       );
       setStudents(response.data.filter((s) => !s.status?.includes('deleted')));
       setAttendance({});
@@ -49,7 +49,7 @@ export default function AttendanceManagement({ departments }) {
 
   const handleMarkAttendance = async (studentId, status) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/attendance', {
+      const response = await axios.post('https://hierarchicalbams-2.onrender.com/api/attendance', {
         studentId,
         classId: selectedClass,
         departmentId: selectedDept,
@@ -72,7 +72,7 @@ export default function AttendanceManagement({ departments }) {
   const handleViewHistory = async (student) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/attendance/student/${student._id}`
+        `https://hierarchicalbams-2.onrender.com/api/attendance/student/${student._id}`
       );
       setSelectedStudent(student);
       setAttendanceHistory(response.data.attendance);
